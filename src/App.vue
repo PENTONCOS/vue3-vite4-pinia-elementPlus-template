@@ -11,4 +11,9 @@ const locale = zhCn;
 </script>
 
 <style rel='stylesheet/scss' lang='scss'>
+#app {
+  color: #fff;
+  border: 1px solid #000;
+  width: 11px;
+}
 </style>
