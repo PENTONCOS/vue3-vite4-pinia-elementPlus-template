@@ -1,0 +1,27 @@
+|-- .husky
+|-- .vscode
+|-- public
+|-- src
+    |-- App.vue
+    |-- main.js
+    |-- api
+    |-- assets
+    |-- components
+    |-- const
+    |-- mock
+    |-- plugins
+    |-- router
+    |-- stores
+    |-- utils
+    |-- views
+|-- .commitlintrc.js
+|-- .cz-config.js
+|-- .env.development
+|-- .env.production
+|-- .gitignore
+|-- .stylelintignore
+|-- .stylelintrc.js
+|-- README.md
+|-- index.html
+|-- package.json
+|-- vite.config.js
