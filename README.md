@@ -24,7 +24,7 @@ Npm 8.19.2
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
 
 
-## Scripts 命令描述]
+## Scripts 命令描述
 服务 `npm run dev`
 
 构建 `npm run build`
