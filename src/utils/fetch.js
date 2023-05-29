@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const service = axios.create({
   timeout: 5000,
-  baseURL: import.meta.env.VITE_APIPrefix
+  baseURL: import.meta.env.VITE_APIPrefix,
   // baseURL: import.meta.env.MODE === "development" ? import.meta.env.VITE_APIPrefix : ''
 });
 

@@ -23,7 +23,7 @@ export const scenicList = [
     location_3D: '',
     location_2D: '',
   },
-]
+];
 
 export const equipmentTypeList = [
   {
@@ -103,14 +103,14 @@ export const equipmentTypeList = [
     icon: 'HeatMap',
     isLegend: false,
   },
-]
+];
 
-export const legendList = equipmentTypeList.filter((item) => item.isLegend)
+export const legendList = equipmentTypeList.filter((item) => item.isLegend);
 
 export const getEquipmentTypeNameList = () => {
   let arr = [];
   equipmentTypeList.forEach((item) => {
-    arr.push(...item.typeName)
-  })
-  return arr
-}
+    arr.push(...item.typeName);
+  });
+  return arr;
+};

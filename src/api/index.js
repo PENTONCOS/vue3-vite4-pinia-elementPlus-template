@@ -1,5 +1,3 @@
-import api_login from "./login";
+import api_login from './login';
 
-export {
-  api_login
-}
+export { api_login };

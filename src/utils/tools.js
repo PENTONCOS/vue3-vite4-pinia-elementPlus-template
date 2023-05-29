@@ -5,5 +5,6 @@
  * @returns {string} - 资源文件路径
  */
 export const getAssetsFile = (baseUrl, pictureName) => {
-  return new URL(`../assets/img/${baseUrl}/${pictureName}`, import.meta.url).href;
+  return new URL(`../assets/img/${baseUrl}/${pictureName}`, import.meta.url)
+    .href;
 };

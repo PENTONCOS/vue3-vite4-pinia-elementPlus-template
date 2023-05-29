@@ -1,7 +1,7 @@
 var defaultOptions = {
   timeout: 5000,
   jsonpCallback: 'callback',
-  jsonpCallbackFunction: null
+  jsonpCallbackFunction: null,
 };
 
 function generateCallbackFunction() {
@@ -24,7 +24,8 @@ function removeScript(scriptId) {
 }
 
 function fetchJsonp(_url) {
-  var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+  var options =
+    arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
   var url = _url;
   var timeout = options.timeout || defaultOptions.timeout;
@@ -33,7 +34,8 @@ function fetchJsonp(_url) {
   var timeoutId = undefined;
 
   return new Promise(function (resolve, reject) {
-    var callbackFunction = options.jsonpCallbackFunction || generateCallbackFunction();
+    var callbackFunction =
+      options.jsonpCallbackFunction || generateCallbackFunction();
     var scriptId = jsonpCallback + '_' + callbackFunction;
 
     window[callbackFunction] = function (response) {
@@ -49,7 +51,10 @@ function fetchJsonp(_url) {
     url += url.indexOf('?') === -1 ? '?' : '&';
 
     var jsonpScript = document.createElement('script');
-    jsonpScript.setAttribute('src', '' + url + jsonpCallback + '=' + callbackFunction);
+    jsonpScript.setAttribute(
+      'src',
+      '' + url + jsonpCallback + '=' + callbackFunction
+    );
     if (options.charset) {
       jsonpScript.setAttribute('charset', options.charset);
     }
@@ -83,4 +88,4 @@ function fetchJsonp(_url) {
   });
 }
 
-export default fetchJsonp
+export default fetchJsonp;

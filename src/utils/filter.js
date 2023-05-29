@@ -8,21 +8,21 @@ const formatDate = (time, cFormat) => {
   if (!time) {
     return null;
   }
-  const format = cFormat || "{y}-{m}-{d} {h}:{i}:{s}";
+  const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}';
   let date;
-  if (typeof time === "object") {
+  if (typeof time === 'object') {
     date = time;
   } else {
     let times = time;
     times = new Date(time).getTime();
-    if ((typeof times === "string")) {
-      if ((/^[0-9]+$/.test(times))) {
+    if (typeof times === 'string') {
+      if (/^[0-9]+$/.test(times)) {
         times = parseInt(times);
       } else {
-        times = times.replace(new RegExp(/-/g), "/");
+        times = times.replace(new RegExp(/-/g), '/');
       }
     }
-    if ((typeof times === "number") && (times.toString().length === 10)) {
+    if (typeof times === 'number' && times.toString().length === 10) {
       times *= 1000;
     }
     date = new Date(times);
@@ -39,16 +39,15 @@ const formatDate = (time, cFormat) => {
   const timeStr = format.replace(/\{([ymdhisa])+\}/g, (result, key) => {
     const value = formatObj[key];
     // Note: getDay() returns 0 on Sunday
-    if (key === "a") {
-      return ["日", "一", "二", "三", "四", "五", "六"][value];
+    if (key === 'a') {
+      return ['日', '一', '二', '三', '四', '五', '六'][value];
     }
     if (!String.prototype.padStart) return padStart(2, value.toString());
-    return value.toString()
-      .padStart(2, "0"); // 返回替换的字符串，padStart用于头部补全
+    return value.toString().padStart(2, '0'); // 返回替换的字符串，padStart用于头部补全
   });
   return timeStr;
-}
+};
 
 export default {
-  formatDate
-}
+  formatDate,
+};

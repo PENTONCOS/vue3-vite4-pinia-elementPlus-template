@@ -5,9 +5,4 @@ import eventBus from './eventBus';
 
 export * from './tools';
 
-export {
-  filter,
-  fetch,
-  fetchJsonp,
-  eventBus,
-}
+export { filter, fetch, fetchJsonp, eventBus };

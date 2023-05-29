@@ -1,13 +1,13 @@
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig, loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import viteCompression from "vite-plugin-compression"
-
+import { fileURLToPath, URL } from 'node:url';
+import { defineConfig, loadEnv } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import viteCompression from 'vite-plugin-compression';
 import { svgBuilder } from './src/plugins/svgBuilder';
+import eslintPlugin from 'vite-plugin-eslint';
 
 const baseConfig = {
   server: {
@@ -40,37 +40,37 @@ const baseConfig = {
       verbose: true,
       disable: false,
       threshold: 10240,
-      algorithm: "gzip",
-      ext: ".gz",
+      algorithm: 'gzip',
+      ext: '.gz',
     }),
+    eslintPlugin(),
   ],
-
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src',
-        import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-    extensions: ['.js', '.ts', '.json'] // 导入时想要省略的扩展名列表
+    extensions: ['.js', '.ts', '.json'], // 导入时想要省略的扩展名列表
   },
+
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: `@import "@/assets/css/main.scss";`, // 全局scss文件挂载
-      }
+      },
     },
   },
-  esbuild: {
-    pure: ["console.log", "debugger"], // 删除log消息
-  }
-}
 
-export default defineConfig((command, mode, ssrBuild) => {
+  esbuild: {
+    pure: ['console.log', 'debugger'], // 删除log消息
+  },
+};
+
+export default defineConfig((command, mode) => {
   if (command === 'build') {
     return {
       ...baseConfig,
       base: loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL),
-    }
+    };
   }
-
   return baseConfig;
-})
+});

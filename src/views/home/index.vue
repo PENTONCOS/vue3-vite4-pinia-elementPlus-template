@@ -15,13 +15,13 @@
 </template>
 
 <script setup>
-import { eventBus, filter } from "@/utils";
-import Header from "./components/Header/index.vue"; // 头部组件
+import { eventBus, filter } from '@/utils';
+import Header from './components/Header/index.vue'; // 头部组件
 
 const router = useRouter();
 
 const state = reactive({
-  content: "我是主页内容", // 主页内容
+  content: '我是主页内容', // 主页内容
 });
 
 /**
@@ -30,9 +30,8 @@ const state = reactive({
  * @return 无返回值
  */
 const changeRouter = (url) => {
-  router.push("/home/" + url);
+  router.push('/home/' + url);
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

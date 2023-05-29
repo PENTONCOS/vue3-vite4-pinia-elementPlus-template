@@ -2,8 +2,7 @@
   <div class="header-wrap">我是header组件</div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .header-wrap {

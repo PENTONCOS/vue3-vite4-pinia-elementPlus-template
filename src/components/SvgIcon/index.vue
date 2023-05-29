@@ -12,7 +12,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
@@ -21,11 +21,11 @@ const svgClass = computed(() => {
   if (props.name) {
     return `svg-icon icon-${props.name}`;
   }
-  return "svg-icon";
+  return 'svg-icon';
 });
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .svg-icon {
   width: 1em;
   height: 1em;
