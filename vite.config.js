@@ -28,7 +28,10 @@ const baseConfig = {
     vueJsx(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vue-router'],
+      imports: ['vue-router', 'vue',],
+      eslintrc: {
+        enabled: true,
+      },
     }),
     Components({
       resolvers: [ElementPlusResolver()],

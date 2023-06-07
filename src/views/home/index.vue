@@ -15,8 +15,8 @@
 </template>
 
 <script setup>
-import { eventBus, filter } from '@/utils';
 import Header from './components/Header/index.vue'; // 头部组件
+// import { eventBus, filter } from '@/utils';
 
 const router = useRouter();
 
