@@ -37,7 +37,7 @@ const baseConfig = {
       resolvers: [ElementPlusResolver()],
     }),
     // 组件化svg
-    svgBuilder('./src/assets/icon/svg/'),
+    // svgBuilder('./src/assets/icon/svg/'),
     // gzip压缩 生产环境生成 .gz 文件
     viteCompression({
       verbose: true,
