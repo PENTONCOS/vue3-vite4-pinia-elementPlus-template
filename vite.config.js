@@ -72,7 +72,8 @@ export default defineConfig((command, mode) => {
   if (command === 'build') {
     return {
       ...baseConfig,
-      base: loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL),
+      // base: loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL),
+      base: 'my-project',
     };
   }
   return baseConfig;
