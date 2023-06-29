@@ -9,8 +9,6 @@ import viteCompression from 'vite-plugin-compression';
 import { svgBuilder } from './src/plugins/svgBuilder';
 import eslintPlugin from 'vite-plugin-eslint';
 
-const publicPath = '/my-project/'; // 修改为你的项目前缀
-
 const baseConfig = {
   server: {
     proxy: {
@@ -71,11 +69,11 @@ const baseConfig = {
 };
 
 export default defineConfig((command, mode) => {
+  console.log('command', command)
   if (command === 'build') {
     return {
       ...baseConfig,
-      // base: loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL),
-      base: path.join(publicPath, loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL)),
+      base: loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL),
     };
   }
   return baseConfig;
