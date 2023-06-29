@@ -68,13 +68,9 @@ const baseConfig = {
   },
 };
 
-export default defineConfig((command, mode) => {
-  console.log('command', command)
-  if (command === 'build') {
-    return {
-      ...baseConfig,
-      base: loadEnv(mode, process.cwd().VITE_BASE_HistoryBaseURL),
-    };
-  }
-  return baseConfig;
+export default defineConfig(({ command, mode }) => {
+  return {
+    ...baseConfig,
+    base: loadEnv(mode, process.cwd()).VITE_BASE_HistoryBaseURL,
+  };
 });
