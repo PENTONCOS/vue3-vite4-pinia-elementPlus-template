@@ -6,7 +6,7 @@
 
 <script setup>
 // element-plus默认为英文，需设置为中文
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 const locale = zhCn;
 </script>
 
