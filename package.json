@@ -2,7 +2,9 @@
   "name": "vue3-vite4-pinia-template",
   "private": true,
   "version": "0.0.0",
-  "engines": { "node": ">=16.0.0" },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,7 +15,8 @@
     "style-lint:fix": "stylelint src/**/*.{css,sass,scss,less,vue} --fix",
     "commit": "git-cz",
     "postinstall": "husky install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "jscpd": "jscpd ./ -o './report/'"
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.1",
@@ -38,6 +41,7 @@
     "husky": "^8.0.3",
     "postcss-html": "^1.5.0",
     "prettier": "^2.8.8",
+    "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.62.0",
     "stylelint": "^14.16.0",
     "stylelint-config-css-modules": "^4.1.0",
@@ -56,5 +60,21 @@
     "*.{css,sass,scss,less,vue}": [
       "npm run style-lint"
     ]
+  },
+  "jscpd": {
+    "threshold": 5,
+    "reporters": [
+      "html",
+      "console",
+      "badge"
+    ],
+    "ignore": [
+      "node_modules",
+      "miniprogram_npm",
+      "pages/test",
+      "config/mock.js "
+    ],
+    "absolute": true,
+    "gitignore": true
   }
 }

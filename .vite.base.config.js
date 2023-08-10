@@ -6,6 +6,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import viteCompression from 'vite-plugin-compression';
 import eslintPlugin from 'vite-plugin-eslint';
+import { visualizer } from 'rollup-plugin-visualizer';
 import { svgBuilder } from './src/plugins/svgBuilder';
 
 
@@ -35,6 +36,11 @@ export default {
       ext: '.gz',
     }),
     eslintPlugin(),
+    visualizer({
+      emitFile: false,
+      file: "stats.html", //分析图生成的文件名
+      open: false //如果存在本地服务端口，将在打包后自动展示
+    })
   ],
   resolve: {
     alias: {
