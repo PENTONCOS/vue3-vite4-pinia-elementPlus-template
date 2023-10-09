@@ -1,3 +1,13 @@
+/*
+ * @Author: jiapandong jiapandong@supconit.com
+ * @Date: 2023-07-07 10:15:47
+ * @LastEditors: jiapandong jiapandong@supconit.com
+ * @LastEditTime: 2023-10-09 15:45:37
+ * @FilePath: /vue3-vite4-pinia-template/.vite.base.config.js
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by jiapandong email: jiapandong@supconit.com, All Rights Reserved. 
+ */
 import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -11,7 +21,6 @@ import { svgBuilder } from './src/plugins/svgBuilder';
 
 
 export default {
-  base: './',
   plugins: [
     vue(),
     vueJsx(),
